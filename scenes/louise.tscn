@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxh714nxtjpit"]
+
+[ext_resource type="Texture2D" uid="uid://csbfvay5iktwu" path="res://art/sprites/characters/Cute girl sprite/Cute Girl Walking_ Front_sprite.png" id="1_32ngs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cod65"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykmuu"]
+atlas = ExtResource("1_32ngs")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tscol"]
+atlas = ExtResource("1_32ngs")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsuyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykmuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tscol")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cod65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(0.132812, 0.132813)
+sprite_frames = SubResource("SpriteFrames_tsuyb")
